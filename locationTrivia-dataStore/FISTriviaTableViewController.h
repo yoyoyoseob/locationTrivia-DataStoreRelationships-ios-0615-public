@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FISTriviaTableViewController : UITableViewController
-@property (strong, nonatomic) NSArray *trivia;
+@property (strong, nonatomic) NSMutableArray *trivia;
 
 @end

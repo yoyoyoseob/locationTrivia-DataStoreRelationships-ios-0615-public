@@ -8,6 +8,7 @@
 
 #import "FISTriviaTableViewController.h"
 #import "FISTrivia.h"
+#import "FISAddTriviaViewController.h"
 
 @interface FISTriviaTableViewController ()
 
@@ -71,6 +72,12 @@
     return cell;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,15 +116,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    // NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+    
+    FISAddTriviaViewController *addTriviaVC = segue.destinationViewController;
+    
+    addTriviaVC.addingTrivia = self.trivia;
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

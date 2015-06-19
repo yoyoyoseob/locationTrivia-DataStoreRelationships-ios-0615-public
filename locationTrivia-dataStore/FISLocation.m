@@ -67,7 +67,7 @@
 
 -(NSString *)numberOfTriva
 {
-    return [NSString stringWithFormat:@"%d", [self.trivia count]];
+    return [NSString stringWithFormat:@"%lu", [self.trivia count]];
 }
 
 @end
